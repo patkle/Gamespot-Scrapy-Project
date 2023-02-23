@@ -1,17 +1,25 @@
-# Gamespot
+# Gamespot Scrapy Project
 
 This project is configured to be hosted on [Scrapy Cloud](https://www.zyte.com/scrapy-cloud/).  
 
 It uses [Zyte Smart Proxy Manager](https://scrapinghub.com/?rfsn=4170080.0597ad) as proxy service.  
 
-The dataset can be found [here](https://www.kaggle.com/datasets/patkle/all-video-game-review-scores-from-gamespotcom).  
-A Jupyter Notebook with some EDA on that data can be found [here](https://www.kaggle.com/patkle/gamespot-score-analysis-playground).
+The dataset for data from [gamespot.com](https://www.gamespot.com/) can be found [here](https://www.kaggle.com/datasets/patkle/all-video-game-review-scores-from-gamespotcom).  
+A Jupyter Notebook with some EDA on that data can be found [here](https://www.kaggle.com/patkle/gamespot-score-analysis-playground).  
+The dataset for [gamefaqs.gamespot.com](https://gamefaqs.gamespot.com/games/rankings?list_type=rate&view_type=1&min_votes=2) is hosted [here](https://www.kaggle.com/datasets/patkle/gamefaqs-82100-rankings-length-and-difficulty) with the notebook [here](https://www.kaggle.com/patkle/gamefaqs-rankings-exploration).
 
 ## games
 
 The spider can be ran with
 ```zsh
 python3 -m scrapy crawl games -a pages=5 -O games.csv
+```
+
+## gamefaqsrankings
+
+The spider can be ran with
+```zsh
+python3 -m scrapy crawl gamefaqsrankings -a pages=5 -O gamefaqsrankings.csv
 ```
 
 ### Arguments
@@ -21,7 +29,6 @@ With `-a` you can specify arguments for the spider.
 |argument   |type  |description   | 
 |---|---|---|
 |pages   |int   |number of pages to scrape   |
-|placeholder   |string   |placeholder in case I want to add another arg   |
 
 
 ## Setting up locally
